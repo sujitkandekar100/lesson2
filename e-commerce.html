@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chatbot</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+      function ProductDetails({Name,Price,DiscountPrice,imageSrc}){
+        return (
+            /*<div>
+            {DiscountPrice && (
+            <div> 
+              <p>{Name}</p>
+              <p><del>{Price}</del></p>
+              <p>{DiscountPrice}</p>
+            </div>
+            )}
+            {!DiscountPrice && (
+            <div> 
+              <p>{Name}</p>
+              <p>{Price}</p>
+            </div>
+          )}
+            <button>Add To Cart</button>
+            </div>*/
+          <>
+          {
+            DiscountPrice ? <><div> 
+              <p>{Name}</p>
+              <p><del>{Price}</del></p>
+              <p>{DiscountPrice}</p>
+              <img src={imageSrc} style={{height:100, width:100}} />
+            </div> </>: <> <div> 
+              <p>{Name}</p>
+              <p>{Price}</p>
+              <img src={imageSrc} style={{height:100, width:100}}/>
+            </div></>
+          }
+          <button>Add To Cart</button>
+
+          </>
+        )
+      }
+       
+     
+      function App() {
+        return (
+          <>
+            <ProductDetails Name="Tennis Balls" Price="Price: $6.00" DiscountPrice="DiscountPrice:$5.45" imageSrc="tennis-balls.png"/>
+            <ProductDetails Name="Cotton-Socks" Price="Price: $6.00" DiscountPrice="DiscountPrice:$5.45" imageSrc="Cotton-socks.png"/>
+            <ProductDetails Name="T-shirt" Price="Price: $7.99" imageSrc="plain-t-shirt.png"/>
+          </>
+        );
+      }
+
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App/>);
+    </script>
+  </body>
+</html>
