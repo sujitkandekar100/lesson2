@@ -51,10 +51,25 @@
           </div>
         );
       }
-
+    function LoginForm(){
+        return (
+            <>
+            <p>Hello,Welcome to My Website</p>
+            <br/>
+            <input placeholder="Email" size="30"/>
+            <br/>
+            <input placeholder="Password"size="30"/>
+            <br/>
+            <button>Login</button>
+            <button>Sign Up</button>
+             <br/>
+            </>
+        )
+    }
       function App() {
         return (
           <>
+            <LoginForm/>
             <ChatInput />
             <ChatMessage
               message="hello chatbot"
